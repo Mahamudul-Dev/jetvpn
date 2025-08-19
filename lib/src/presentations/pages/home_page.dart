@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
 
                       // connected country
                       CountryTile(
-                        name: state.selectedConfig?.name ?? 'Unknown',
+                        name: '${state.selectedConfig?.city ?? 'Unknown'}, ${state.selectedConfig?.country ?? 'Unknown'}',
                         flag: state.selectedConfig?.icon,
                         onTap: () {
                           context.pushNamed(AppRoutes.servers.name);

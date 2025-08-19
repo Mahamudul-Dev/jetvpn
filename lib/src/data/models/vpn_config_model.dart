@@ -3,7 +3,9 @@ import '../../domain/entities/vpn_config.dart';
 class VpnConfigModel extends VpnConfig {
   const VpnConfigModel({
     super.id,
-    super.name,
+    super.country,
+    super.remark,
+    super.city,
     super.icon,
     super.serverAddress,
     super.username,
@@ -19,7 +21,9 @@ class VpnConfigModel extends VpnConfig {
   factory VpnConfigModel.fromJson(Map<String, dynamic> json) {
     return VpnConfigModel(
       id: json['id'],
-      name: json['name'],
+      country: json['name'],
+      remark: json['remark'],
+      city: json['city'],
       icon: json['icon'],
       serverAddress: json['server_address'],
       username: json['username'],
@@ -35,7 +39,9 @@ class VpnConfigModel extends VpnConfig {
   factory VpnConfigModel.fromEntity(VpnConfig entity) {
     return VpnConfigModel(
       id: entity.id,
-      name: entity.name,
+      country: entity.country,
+      remark: entity.remark,
+      city: entity.city,
       icon: entity.icon,
       serverAddress: entity.serverAddress,
       username: entity.username,
@@ -51,7 +57,9 @@ class VpnConfigModel extends VpnConfig {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'name': name,
+      'country': country,
+      'remark': remark,
+      'city': city,
       'icon': icon,
       'server_address': serverAddress,
       'username': username,

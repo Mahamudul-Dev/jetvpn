@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jetvpn/src/core/routes/app_router.dart';
 import 'package:jetvpn/src/data/datasources/vpn_datasource.dart';
 import 'package:jetvpn/src/presentations/bloc/vpn_bloc.dart';
 
@@ -46,7 +48,7 @@ class _ServersPageState extends State<ServersPage> {
                     child: state.availableConfigs[index].icon != null ? SvgPicture.network(AppConfig.storagePath + state.availableConfigs[index].icon!, fit: BoxFit.cover, ) : SvgPicture.asset(AssetsHelper.imagePlaceholder),
                   ),
                 ),
-                title: Text(state.availableConfigs[index].name ?? 'Unknown'),
+                title: Text('${state.availableConfigs[index].city ?? 'Unknown'}, ${state.availableConfigs[index].country ?? 'Unknown'}'),
                 subtitle: Text(state.availableConfigs[index].isPro! ? 'Premium' : 'Free', style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,),),
                 trailing: state.availableConfigs[index].serverAddress == null ? null : FutureBuilder(future: getIt<VpnDataSource>().getV2RayServerDelay(state.availableConfigs[index].serverAddress!), builder: (context, asyncSnapshot){
@@ -66,7 +68,7 @@ class _ServersPageState extends State<ServersPage> {
 
                 onTap: (){
                   context.read<VpnBloc>().add(VpnSelectConfigEvent(state.availableConfigs[index]));
-                  Navigator.pop(context);
+                  context.goNamed(AppRoutes.home.name);
                 },
               );
             },

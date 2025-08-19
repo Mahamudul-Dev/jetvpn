@@ -2,7 +2,9 @@ import 'package:equatable/equatable.dart';
 
 class VpnConfig extends Equatable {
   final int? id;
-  final String? name;
+  final String? country;
+  final String? city;
+  final String? remark;
   final String? icon;
   final String? serverAddress;
   final String? username;
@@ -15,7 +17,9 @@ class VpnConfig extends Equatable {
 
   const VpnConfig({
     this.id,
-    this.name,
+    this.country,
+    this.city,
+    this.remark,
     this.icon,
     this.serverAddress,
     this.username,
@@ -28,6 +32,6 @@ class VpnConfig extends Equatable {
   });
 
   @override
-  List<Object?> get props => [id, name, icon, serverAddress, username, password, protocol, config, isPro, createdAt, updatedAt];
+  List<Object?> get props => [id, country, city, remark, icon, serverAddress, username, password, protocol, config, isPro, createdAt, updatedAt];
 
 }

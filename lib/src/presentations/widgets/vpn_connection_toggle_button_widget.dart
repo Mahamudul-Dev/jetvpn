@@ -6,7 +6,6 @@ import 'package:ionicons/ionicons.dart';
 import 'package:jetvpn/src/domain/entities/vpn_config.dart';
 
 import '../../../main.dart';
-import '../../domain/entities/vpn_status.dart';
 import 'ripple_widget.dart';
 
 
@@ -66,7 +65,7 @@ class VpnConnectionToggleButtonWidget extends StatelessWidget {
 
 
   _handleConnectToggle() {
-    logger.d('tapped vpn connection toggle button, vpnStatus: $vpnStatus, selectedConfigFileName: ${selectedConfig?.name}',);
+    logger.d('tapped vpn connection toggle button, vpnStatus: $vpnStatus, selectedConfigFileName: ${selectedConfig?.country}',);
     if(vpnStatus.state == 'CONNECTING' || vpnStatus.state == 'DISCONNECTING'){
       return;
     }

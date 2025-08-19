@@ -31,28 +31,46 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # Core Flutter components
   cupertino_icons: ^1.0.8
+
+  # State management and architecture
   flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
+  equatable: ^2.0.5
+  get_it: ^7.6.0
+  dartz: ^0.10.1
+
+  # Navigation and routing
   go_router: ^16.0.0
+
+  # UI and theming
   flutter_screenutil: ^5.9.3
-  permission_handler: ^12.0.1
   dynamic_color: ^1.7.0
   google_fonts: ^6.2.1
-  equatable: ^2.0.5
   gap: ^3.0.1
-  get_it: ^7.6.0
-  bloc: ^9.0.0
   skeletonizer: ^2.1.0+1
+
+  # Icons and graphics
   ionicons: ^0.2.2
   font_awesome_flutter: ^10.9.0
-  dotlottie_loader: ^0.0.5
   flutter_svg: ^2.2.0
-  logger: ^2.6.1
-  dartz: ^0.10.1
+  dotlottie_loader: ^0.0.5
+
+  # Network and services
+  http: ^1.2.2
+  
+  # VPN functionality
   flutter_v2ray: ^1.0.10
+  
+  # Permissions and device features
+  permission_handler: ^12.0.1
+  
+  # WebView support
   webview_flutter: ^4.13.0
+  
+  # Development utilities
+  logger: ^2.6.1
 
 dev_dependencies:
   flutter_test:
