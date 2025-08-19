@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jetvpn/src/domain/usecases/connect_vpn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jetvpn/src/core/routes/app_router.dart';
 
 import '../../core/config/app_config.dart';
 import '../../core/utils/assets_helper.dart';
@@ -30,7 +32,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppConfig.appName)),
+      appBar: AppBar(title: Text(AppConfig.appName), actions: [
+        IconButton(onPressed: () => context.pushNamed(AppRoutes.subscriptions.name), icon: Icon(FontAwesomeIcons.crown),)
+      ],),
+
+      drawer: AppDrawerWidget(),
 
       body: Stack(
         children: [
@@ -79,7 +85,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                         } else {
-
                           context.read<VpnBloc>().add(VpnConnectEvent(state.selectedConfig!.serverAddress!));
                         }
                       }, onDisconnect: (){
@@ -99,7 +104,9 @@ class _HomePageState extends State<HomePage> {
                       CountryTile(
                         name: state.selectedConfig?.name ?? 'Unknown',
                         flag: state.selectedConfig?.icon,
-                        onTap: () {},
+                        onTap: () {
+                          context.pushNamed(AppRoutes.servers.name);
+                        },
                       ),
                     ],
                   ),

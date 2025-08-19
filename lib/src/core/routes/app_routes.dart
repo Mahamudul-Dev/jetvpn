@@ -16,4 +16,5 @@ class AppRoutes {
   static final forgotPassword = RouteModel('forgotPassword', '/forgot-password');
   static final servers = RouteModel('servers', '/servers');
   static final subscriptions = RouteModel('subscriptions', '/subscriptions');
+  static final webview = RouteModel('webview', '/webview');
 }

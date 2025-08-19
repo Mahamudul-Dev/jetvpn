@@ -18,7 +18,7 @@ class RealtimeSpeedWidget extends StatelessWidget {
               color: Colors.amber,
             ),
             Text(
-              "${vpnStatus.upload} Mbit/s",
+              "${vpnStatus.uploadSpeed / 1000} Mbit/s",
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ],
@@ -33,7 +33,7 @@ class RealtimeSpeedWidget extends StatelessWidget {
               color: Colors.green,
             ),
             Text(
-              "${vpnStatus.download} Mbit/s",
+              "${vpnStatus.downloadSpeed / 1000} Mbit/s",
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ],

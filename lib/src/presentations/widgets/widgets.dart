@@ -6,3 +6,4 @@ export 'realtime_speed_widget.dart';
 export 'connection_state_widget.dart';
 export 'error_view_widget.dart';
 export 'vpn_connection_toggle_button_widget.dart';
+export 'app_drawer_widget.dart';

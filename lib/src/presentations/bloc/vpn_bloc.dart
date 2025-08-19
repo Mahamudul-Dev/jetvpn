@@ -7,9 +7,7 @@ import 'package:jetvpn/main.dart';
 import 'package:jetvpn/src/domain/usecases/initialize_v2ray.dart';
 
 import '../../core/config/app_config.dart';
-import '../../data/models/vpn_config_model.dart';
 import '../../domain/entities/vpn_config.dart';
-import '../../domain/entities/vpn_status.dart';
 import '../../domain/usecases/connect_vpn.dart';
 import '../../domain/usecases/disconnect_vpn.dart';
 import '../../domain/usecases/get_available_configs.dart';

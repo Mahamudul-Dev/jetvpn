@@ -32,6 +32,20 @@ class AppRouter {
         name: AppRoutes.servers.name,
         builder: (context, state) => const ServersPage(),
       ),
-    ])
+    ]),
+
+    GoRoute(
+        path: AppRoutes.subscriptions.path,
+        name: AppRoutes.subscriptions.name,
+        builder: (context, state) => const SubscriptionsPage(),
+      ),
+
+      GoRoute(
+        path: AppRoutes.webview.path,
+        name: AppRoutes.webview.name,
+        builder: (context, state) => WebviewPage(url: state.extra as String,),
+      ),
+
+      
   ];
 }

@@ -11,8 +11,6 @@ import '../../core/config/app_config.dart';
 import '../../core/config/locator.dart';
 import '../../core/utils/assets_helper.dart';
 
-
-
 class ServersPage extends StatefulWidget {
   const ServersPage({super.key});
 
@@ -65,6 +63,11 @@ class _ServersPageState extends State<ServersPage> {
                   fontWeight: FontWeight.w100,
                   fontFamily: GoogleFonts.montserrat().fontFamily,
                 ),
+
+                onTap: (){
+                  context.read<VpnBloc>().add(VpnSelectConfigEvent(state.availableConfigs[index]));
+                  Navigator.pop(context);
+                },
               );
             },
           );
