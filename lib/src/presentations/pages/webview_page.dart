@@ -34,13 +34,13 @@ class _WebviewPageState extends State<WebviewPage> {
           },
         ),
       )
-      ..loadFile(widget.url);
+      ..loadRequest(Uri.parse(widget.url));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body: WebViewWidget(controller: _controller),
+    body: SafeArea(child: WebViewWidget(controller: _controller)),
   );
   }
 }

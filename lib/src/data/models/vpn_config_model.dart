@@ -21,7 +21,7 @@ class VpnConfigModel extends VpnConfig {
   factory VpnConfigModel.fromJson(Map<String, dynamic> json) {
     return VpnConfigModel(
       id: json['id'],
-      country: json['name'],
+      country: json['country'],
       remark: json['remark'],
       city: json['city'],
       icon: json['icon'],

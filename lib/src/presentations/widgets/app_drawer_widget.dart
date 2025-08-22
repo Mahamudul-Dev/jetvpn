@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/config/app_config.dart';
 import '../../core/routes/app_router.dart';
 
 class AppDrawerWidget extends StatelessWidget {
@@ -38,11 +39,11 @@ class AppDrawerWidget extends StatelessWidget {
         ),
         ListTile(
           titleTextStyle: Theme.of(context).textTheme.labelMedium,title: Text('Terms & Conditions'), onTap: (){
-          context.pushNamed(AppRoutes.webview.name, extra: 'D:\\Projects\\Flutter\\jetvpn\\assets\\others\\terms-and-conditions.html');
+          context.pushNamed(AppRoutes.webview.name, extra: '${AppConfig.baseUrl}/terms-and-conditions');
         }, leading: Icon(Icons.gavel),),
         ListTile(
           titleTextStyle: Theme.of(context).textTheme.labelMedium,title: Text('Privacy Policy'), onTap: (){
-          context.pushNamed(AppRoutes.webview.name, extra: 'D:\\Projects\\Flutter\\jetvpn\\assets\\others\\privacy-policy.html');
+          context.pushNamed(AppRoutes.webview.name, extra: '${AppConfig.baseUrl}/privacy-policy');
         }, leading: Icon(Icons.privacy_tip),),
 
       ]);

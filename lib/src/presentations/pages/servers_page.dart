@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +46,7 @@ class _ServersPageState extends State<ServersPage> {
                       shape: BoxShape.circle,
 
                     ),
-                    child: state.availableConfigs[index].icon != null ? SvgPicture.network(AppConfig.storagePath + state.availableConfigs[index].icon!, fit: BoxFit.cover, ) : SvgPicture.asset(AssetsHelper.imagePlaceholder),
+                    child: state.availableConfigs[index].icon != null ? CachedNetworkImage(imageUrl: AppConfig.storagePath + state.availableConfigs[index].icon!, fit: BoxFit.cover, ) : SvgPicture.asset(AssetsHelper.imagePlaceholder),
                   ),
                 ),
                 title: Text('${state.availableConfigs[index].city ?? 'Unknown'}, ${state.availableConfigs[index].country ?? 'Unknown'}'),

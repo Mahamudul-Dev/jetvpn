@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -31,7 +32,7 @@ class CountryTile extends StatelessWidget {
           shape: BoxShape.circle,
 
         ),
-        child: flag != null ? SvgPicture.network(AppConfig.storagePath + flag!, fit: BoxFit.cover, ) : SvgPicture.asset(AssetsHelper.imagePlaceholder),
+        child: flag != null ? CachedNetworkImage(imageUrl: AppConfig.storagePath + flag!, fit: BoxFit.cover,) : SvgPicture.asset(AssetsHelper.imagePlaceholder),
       ),
       title: Text(
         name,
